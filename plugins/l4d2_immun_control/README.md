@@ -23,7 +23,7 @@ off the Charger, so refusing the attack does not leave the survivor stuck in pla
 
 | File | Where |
 |---|---|
-| `scripting/l4d2_immun_control.smx` | `addons/sourcemod/plugins/` |
+| `l4d2_immun_control.smx` | `addons/sourcemod/plugins/` |
 
 SourceMod **1.12**. This module **requires the third-party [Left 4 DHooks Direct](https://forums.alliedmods.net/showthread.php?t=321696) plugin**
 (`left4dhooks.smx`) — it `#include <left4dhooks>` and does all of its work from left4dhooks

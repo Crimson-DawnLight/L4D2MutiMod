@@ -34,10 +34,10 @@ unaffected by this.
 
 | File | Where |
 |---|---|
-| `scripting/l4d2_survivors_healthbar.smx` | `addons/sourcemod/plugins/` |
+| `l4d2_survivors_healthbar.smx` | `addons/sourcemod/plugins/` |
 
 SourceMod **1.12**. Requires the [SendProxy](../../extensions/sendproxy/) extension from this
-repository — the `.sp` is included in `scripting/` if you want to build it yourself.
+repository — the `.sp` sits next to it if you want to build it yourself.
 
 ## ConVars
 
@@ -62,7 +62,7 @@ Config file: `cfg/sourcemod/l4d2_survivors_healthbar.cfg`
 ## Credits
 
 Original plugin by xZk (AlliedModders). Ported to the current SendProxy API by Crimson — the
-porting notes are in the header of `scripting/l4d2_survivors_healthbar.sp`.
+porting notes are in the header of `l4d2_survivors_healthbar.sp`.
 
 ## Changelog
 

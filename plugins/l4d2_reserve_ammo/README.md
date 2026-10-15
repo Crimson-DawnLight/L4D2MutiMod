@@ -33,7 +33,7 @@ Timing:
 
 | File | Where |
 |---|---|
-| `scripting/l4d2_reserve_ammo.smx` | `addons/sourcemod/plugins/` |
+| `l4d2_reserve_ammo.smx` | `addons/sourcemod/plugins/` |
 
 ## Commands
 

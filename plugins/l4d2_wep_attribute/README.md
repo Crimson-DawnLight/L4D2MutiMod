@@ -45,7 +45,7 @@ is created from the default table on first start.
 
 | File | Where |
 |---|---|
-| `scripting/l4d2_wep_attribute.smx` | `addons/sourcemod/plugins/` |
+| `l4d2_wep_attribute.smx` | `addons/sourcemod/plugins/` |
 | `gamedata/l4d2_wep_attribute.txt` | `addons/sourcemod/gamedata/` |
 | `data/weapon_attributes_def.cfg` | `addons/sourcemod/data/` |
 

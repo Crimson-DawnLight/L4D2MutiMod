@@ -26,8 +26,8 @@ victim side — see the ConVar table.
 
 | File | Where |
 |---|---|
-| `scripting/l4d2_dmg_number.smx` | `addons/sourcemod/plugins/` |
-| `scripting/include/[API]l4d2_dmg_number.inc` | `addons/sourcemod/scripting/include/` — only needed by a plugin that calls the natives |
+| `l4d2_dmg_number.smx` | `addons/sourcemod/plugins/` |
+| `include/[API]l4d2_dmg_number.inc` | `addons/sourcemod/scripting/include/` — only needed by a plugin that calls the natives |
 
 ## Using the natives
 

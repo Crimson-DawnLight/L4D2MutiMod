@@ -28,7 +28,7 @@ game's own end-of-round scoreboard statistics. Clear bit 3 if you rely on that s
 
 | File | Where |
 |---|---|
-| `scripting/l4d2_block_msgs.smx` | `addons/sourcemod/plugins/` |
+| `l4d2_block_msgs.smx` | `addons/sourcemod/plugins/` |
 
 ## ConVars
 

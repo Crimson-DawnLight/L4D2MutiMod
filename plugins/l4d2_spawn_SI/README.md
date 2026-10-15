@@ -23,7 +23,7 @@ and reads `versus_boss_buffer` for the versus boss-flow buffer.
 
 | File | Where |
 |---|---|
-| `scripting/l4d2_spawn_SI.smx` | `addons/sourcemod/plugins/` |
+| `l4d2_spawn_SI.smx` | `addons/sourcemod/plugins/` |
 
 SourceMod **1.12**.
 

@@ -25,7 +25,7 @@ Melee, throwables and items are ignored — the vtable does not apply to them.
 
 | File | Where |
 |---|---|
-| `scripting/l4d2_reload.smx` | `addons/sourcemod/plugins/` |
+| `l4d2_reload.smx` | `addons/sourcemod/plugins/` |
 | `gamedata/weapon_reloading.txt` | `addons/sourcemod/gamedata/` |
 
 SourceMod **1.12**.
