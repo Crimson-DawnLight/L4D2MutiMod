@@ -1,0 +1,40 @@
+"Games"
+{
+	"left4dead2"
+	{
+		"Functions"
+		{
+			// Added for Extension, by crimson
+			"L4DD::CTerrorGun::FinishReload"
+			{
+				"offset"		"CTerrorGun::FinishReload"
+				"callconv"		"thiscall"
+				"return"		"void"
+				"this"			"entity"
+			}
+
+			"L4DD::CTerrorGun::AbortReload"
+			{
+				"offset"		"CTerrorGun::AbortReload"
+				"callconv"		"thiscall"
+				"return"		"void"
+				"this"			"entity"
+			}
+		}
+
+		"Offsets"
+		{
+			"CTerrorGun::FinishReload"
+			{
+				"linux"   	"280"
+				"windows"	"279"
+			}
+
+			"CTerrorGun::AbortReload"
+			{
+				"linux"		"281"
+				"windows"	"280"
+			}
+		}
+	}
+}
