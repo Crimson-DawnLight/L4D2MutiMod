@@ -2,11 +2,9 @@
 
 ## Supported SourceMod versions
 
-- **1.12** — supported. This is the build to use.
-- **1.13** — **not supported. Do not use it.** Support was dropped deliberately
-  and there is no plan to bring it back. The `sm1.13/` build stays in the package
-  only for people stuck on 1.13; it is unmaintained — no fixes, no testing, no
-  gamedata updates — and it will be removed in a future release.
+- **1.12 and earlier** — supported. This is the build to use.
+- **1.13** — **not supported. Do not use it.** Support was dropped outright: no
+  1.13 build is shipped, and there is no plan to bring it back.
 
 The version number below is the one baked into the binaries; support status is
 separate from it and does not bump the version.

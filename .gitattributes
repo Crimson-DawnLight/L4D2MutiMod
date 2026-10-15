@@ -1,0 +1,9 @@
+# Everything is LF — in the repository and in the working tree. Without this,
+# core.autocrlf=true rewrites files to CRLF on checkout and every commit shows
+# whole-file diffs.
+* text=auto eol=lf
+
+# Never touch these.
+*.so  binary
+*.dll binary
+*.smx binary

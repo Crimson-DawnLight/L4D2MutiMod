@@ -11,17 +11,15 @@ for gameplay code.
 
 | File | Where |
 |---|---|
-| `sm1.12/sendproxy.ext.so` (Linux) / `sm1.12/sendproxy.ext.dll` (Windows) | `addons/sourcemod/extensions/` |
+| `sendproxy.ext.so` (Linux) / `sendproxy.ext.dll` (Windows) | `addons/sourcemod/extensions/` |
 | `gamedata/sendproxy.txt` | `addons/sourcemod/gamedata/` |
 | `scripting/include/sendproxy.inc` | `addons/sourcemod/scripting/include/` |
 
-SourceMod **1.12** is the supported version — it is what this extension is built
-and tested against. Use the `sm1.12/` build. **SourceMod 1.13 is not supported**:
-the `sm1.13/` build is still shipped for anyone stuck on 1.13, but it is
-unmaintained — no fixes, no testing, no gamedata updates. Gamedata shipped for
-Left 4 Dead 2. The extension refuses to load — with a logged error — when any
-lookup in `gamedata/sendproxy.txt` fails, instead of loading and then silently
-doing nothing.
+SourceMod **1.12 and earlier** is what this extension is built and tested against.
+**SourceMod 1.13 is not supported**: support was dropped outright, no 1.13 build is
+shipped, and none will be. Gamedata shipped for Left 4 Dead 2. The extension
+refuses to load — with a logged error — when any lookup in `gamedata/sendproxy.txt`
+fails, instead of loading and then silently doing nothing.
 
 ## Use
 
