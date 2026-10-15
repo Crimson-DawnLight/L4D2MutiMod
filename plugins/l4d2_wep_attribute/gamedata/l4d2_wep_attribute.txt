@@ -1,0 +1,249 @@
+"Games"
+{
+	"left4dead2"
+	{
+		"Addresses"
+		{
+			"MeleeWeaponInfoStore"
+			{
+				"windows"
+				{
+					"signature" "GiveNamedItem"
+					"read" "340"
+				}
+				"linux"
+				{
+					"signature" "CMeleeWeaponInfoStore"
+				}
+			}
+		}
+
+		"Signatures"
+		{
+			"GetWeaponInfo"
+			{
+				"library"		"server"
+				"linux"			"@_Z13GetWeaponInfo10CSWeaponID"
+				"windows"		"\x55\x8B\x2A\x53\x8B\x2A\x2A\x85\x2A\x75\x2A\x33\x2A\x5B\x5D\xC3\x80"
+				/* 55 8B ? 53 8B ? ? 85 ? 75 ? 33 ? 5B 5D C3 80 */
+				/* Search "weapon_reparse_server" for "CTerrorWeaponInfo::Reload", inside top call */
+			}
+
+			"CMeleeWeaponInfoStore::GetMeleeWeaponInfo"
+			{
+				"library"		"server"
+				"linux"			"@_ZN21CMeleeWeaponInfoStore18GetMeleeWeaponInfoEi"
+				"windows"		"\x55\x8B\x2A\x83\x2A\x2A\x8B\x2A\x2A\x56\x8B\x2A\x8D\x2A\x2A\x51\x8D\x2A\x2A\x89\x2A\x2A\xE8\x2A\x2A\x2A\x2A\x83\x2A\x2A\x75"
+				/* 55 8B ? 83 ? ? 8B ? ? 56 8B ? 8D ? ? 51 8D ? ? 89 ? ? E8 ? ? ? ? 83 ? ? 75 */
+				/* Search "models/props_junk/gascan001a.mdl", one of xrefs, compare to NIX code easily found. */
+			}
+		}
+
+		"Offsets"
+		{
+			"L4D2IntWeapon_Damage"
+			{
+				"windows"	"2508"
+				"linux"		"2508"
+			}
+
+			"L4D2IntWeapon_Bullets"
+			{
+				"windows"	"2520"
+				"linux"		"2520"
+			}
+
+			"L4D2IntWeapon_ClipSize"
+			{
+				"windows"	"352"
+				"linux"		"352"
+			}
+
+			"L4D2IntWeapon_Bucket"
+			{
+				"windows"	"344"
+				"linux"		"344"
+			}
+
+			"L4D2IntWeapon_Tier"
+			{
+				"windows"	"3048"
+				"linux"		"3048"
+			}
+
+			"L4D2IntWeapon_DefaultSize"
+			{
+				"windows"	"360"
+				"linux"		"360"
+			}
+
+			"L4D2IntWeapon_Type" // Search: "WeaponType" for offset
+			{
+				"windows"	"2196"
+				"linux"		"2196"
+			}
+
+			"L4D2FloatWeapon_MaxPlayerSpeed"
+			{
+				"windows"	"2192"
+				"linux"		"2192"
+			}
+
+			"L4D2FloatWeapon_SpreadPerShot"
+			{
+				"windows"	"3088"
+				"linux"		"3088"
+			}
+
+			"L4D2FloatWeapon_MaxSpread"
+			{
+				"windows"	"3092"
+				"linux"		"3092"
+			}
+
+			"L4D2FloatWeapon_SpreadDecay"
+			{
+				"windows"	"3096"
+				"linux"		"3096"
+			}
+
+			"L4D2FloatWeapon_MinDuckingSpread"
+			{
+				"windows"	"3100"
+				"linux"		"3100"
+			}
+
+			"L4D2FloatWeapon_MinStandingSpread"
+			{
+				"windows"	"3104"
+				"linux"		"3104"
+			}
+
+			"L4D2FloatWeapon_MinInAirSpread"
+			{
+				"windows"	"3108"
+				"linux"		"3108"
+			}
+
+			"L4D2FloatWeapon_MaxMovementSpread"
+			{
+				"windows"	"3112"
+				"linux"		"3112"
+			}
+
+			"L4D2FloatWeapon_PenetrationNumLayers"
+			{
+				"windows"	"3144"
+				"linux"		"3144"
+			}
+
+			"L4D2FloatWeapon_PenetrationPower"
+			{
+				"windows"	"3148"
+				"linux"		"3148"
+			}
+
+			"L4D2FloatWeapon_PenetrationMaxDist"
+			{
+				"windows"	"3152"
+				"linux"		"3152"
+			}
+
+			"L4D2FloatWeapon_CharPenetrationMaxDist"
+			{
+				"windows"	"3156"
+				"linux"		"3156"
+			}
+
+			"L4D2FloatWeapon_Range"
+			{
+				"windows"	"2512"
+				"linux"		"2512"
+			}
+
+			"L4D2FloatWeapon_RangeModifier"
+			{
+				"windows"	"2516"
+				"linux"		"2516"
+			}
+
+			"L4D2FloatWeapon_CycleTime"
+			{
+				"windows"	"2524"
+				"linux"		"2524"
+			}
+
+			"L4D2FloatWeapon_ScatterPitch"
+			{
+				"windows"	"3116"
+				"linux"		"3116"
+			}
+
+			"L4D2FloatWeapon_ScatterYaw"
+			{
+				"windows"	"3120"
+				"linux"		"3120"
+			}
+
+			"L4D2FloatWeapon_VerticalPunch"
+			{
+				"windows"	"3076"
+				"linux"		"3076"
+			}
+
+			"L4D2FloatWeapon_HorizontalPunch"
+			{
+				"windows"	"3080"
+				"linux"		"3080"
+			}
+
+			"L4D2FloatWeapon_GainRange"
+			{
+				"windows"	"3160"
+				"linux"		"3160"
+			}
+
+			"L4D2FloatWeapon_ReloadDuration"
+			{
+				"windows"	"3128"
+				"linux"		"3128"
+			}
+
+			"L4D2IntMeleeWeapon_DamageFlags"
+			{
+				"windows"	"292"
+				"linux"		"292"
+			}
+
+			"L4D2IntMeleeWeapon_RumbleEffect"
+			{
+				"windows"	"296"
+				"linux"		"296"
+			}
+
+			"L4D2BoolMeleeWeapon_Decapitates"
+			{
+				"windows"	"300"
+				"linux"		"300"
+			}
+
+			"L4D2FloatMeleeWeapon_Damage"
+			{
+				"windows"	"288"
+				"linux"		"288"
+			}
+
+			"L4D2FloatMeleeWeapon_RefireDelay"
+			{
+				"windows"	"4"
+				"linux"		"4"
+			}
+
+			"L4D2FloatMeleeWeapon_WeaponIdleTime"
+			{
+				"windows"	"3148"
+				"linux"		"3148"
+			}
+		}
+	}
+}

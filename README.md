@@ -27,6 +27,7 @@ them. Either way, what each thing does and where its files go is documented next
 | [l4d2_immun_control](plugins/l4d2_immun_control/) | plugin | 1.0.0 | Lets survivors ignore chosen special-infected controls | [`.smx`](plugins/l4d2_immun_control/scripting/l4d2_immun_control.smx) |
 | [l4d2_reserve_ammo](plugins/l4d2_reserve_ammo/) | plugin | 1.0.0 | Per-weapon-type reserve ammo caps, from a config file | [`.smx`](plugins/l4d2_reserve_ammo/scripting/l4d2_reserve_ammo.smx) |
 | [l4d2_spawn_SI](plugins/l4d2_spawn_SI/) | plugin | 1.0.0 | Per-class special infected limits, weights and spawn timing | [`.smx`](plugins/l4d2_spawn_SI/scripting/l4d2_spawn_SI.smx) |
+| [l4d2_wep_attribute](plugins/l4d2_wep_attribute/) | plugin | 1.0.0 | Retunes any weapon or melee script's attributes at runtime, from KeyValues tables | [`.smx`](plugins/l4d2_wep_attribute/scripting/l4d2_wep_attribute.smx) |
 
 ## Install
 
