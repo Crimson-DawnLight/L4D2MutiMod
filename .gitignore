@@ -1,5 +1,5 @@
-# Release artifacts never go into git — binaries ship as GitHub Releases.
-*.smx
+# Extension binaries ship as GitHub Releases — never commit them.
+# Plugin .smx DOES live in the tree (plugins/<name>/scripting/), so it is not ignored.
 *.so
 *.dll
 *.zip
