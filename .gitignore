@@ -1,0 +1,12 @@
+# Release artifacts never go into git — binaries ship as GitHub Releases.
+*.smx
+*.so
+*.dll
+*.zip
+*.tar.gz
+*.7z
+
+# OS / editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
