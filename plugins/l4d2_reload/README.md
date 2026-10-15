@@ -28,11 +28,7 @@ Melee, throwables and items are ignored — the vtable does not apply to them.
 | `scripting/l4d2_reload.smx` | `addons/sourcemod/plugins/` |
 | `gamedata/weapon_reloading.txt` | `addons/sourcemod/gamedata/` |
 
-SourceMod **1.12**. The `.sp` is included in `scripting/` if you want to build it yourself.
-
-The shipped `.sp` has the standalone-plugin switch **on** (`#define _crimson_weapon_reload_usedfor_plugins`),
-so it compiles into the `sm_reload` plugin as-is. Comment that line out and the file becomes a plain
-library — `#include` it from your own plugin to use `WepReload` with nothing registered.
+SourceMod **1.12**.
 
 ## Commands
 
@@ -51,8 +47,7 @@ This module creates no ConVars, so it writes no config file.
 ## Requirements
 
 SourceMod **1.12**. No runtime plugin or extension — only SourceMod's own `sdktools` and the gamedata
-above. Building from source additionally needs the `[API]l4d2_base` include (`WeaponType` and
-`GetWeaponTypeFromCls`).
+above.
 
 ## Credits
 

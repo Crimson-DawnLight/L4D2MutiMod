@@ -25,18 +25,11 @@ and reads `versus_boss_buffer` for the versus boss-flow buffer.
 |---|---|
 | `scripting/l4d2_spawn_SI.smx` | `addons/sourcemod/plugins/` |
 
-SourceMod **1.12**. The `.sp` it was built from is in `scripting/` if you want to read or rebuild
-it.
+SourceMod **1.12**.
 
 > **Requires [Left 4 DHooks Direct](https://forums.alliedmods.net/showthread.php?t=321696)**
 > (`left4dhooks.smx`) installed on the server — the plugin `#include <left4dhooks>` and will not
 > load without it.
-
-The shipped `.sp` has the standalone-plugin switch on — it carries a `Plugin myinfo` block and the
-plugin forwards, so it builds into the `.smx` above on its own. Comment out the
-`#define _crimson_spawn_SI_usedfor_plugins` line near the top and the file becomes a plain library
-instead: `#include` it from your own plugin and drive it through `SISpawnManager` (call
-`PluginStart()` from `OnPluginStart`, `ConfigsExecuted()` from `OnConfigsExecuted`, and so on).
 
 ## Config file
 

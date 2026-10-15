@@ -4,15 +4,15 @@ Release builds of Left 4 Dead 2 server-side SourceMod extensions and plugins by 
 
 **Extensions ship as binaries only** — no source, distributed as GitHub
 [Release](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases) assets. **Plugins ship in the
-tree**: the `.smx` and the `.sp` it was built from sit together, so you can read, rebuild or fork
-them. Either way, what each thing does and where its files go is documented next to it.
+tree** as `.smx` plus docs; where the source is published as well it sits next to the `.smx`. Either
+way, what each thing does and where its files go is documented next to it.
 
 ## Contents
 
 | | Directory | What goes there |
 |---|---|---|
 | Extensions | [`extensions/`](extensions/) | SourceMod C++ extensions — docs in the tree, binaries in Releases |
-| Plugins | [`plugins/`](plugins/) | SourcePawn plugins — `.sp` + `.smx` + docs in the tree |
+| Plugins | [`plugins/`](plugins/) | SourcePawn plugins — `.smx` + docs in the tree (the `.sp` too, where published) |
 
 ## Releases
 

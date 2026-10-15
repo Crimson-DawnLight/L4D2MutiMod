@@ -24,18 +24,10 @@ off the Charger, so refusing the attack does not leave the survivor stuck in pla
 | File | Where |
 |---|---|
 | `scripting/l4d2_immun_control.smx` | `addons/sourcemod/plugins/` |
-| `scripting/l4d2_immun_control.sp` | `addons/sourcemod/scripting/` (only if you build it yourself) |
 
 SourceMod **1.12**. This module **requires the third-party [Left 4 DHooks Direct](https://forums.alliedmods.net/showthread.php?t=321696) plugin**
 (`left4dhooks.smx`) — it `#include <left4dhooks>` and does all of its work from left4dhooks
 forwards. Install that too, or this plugin will not load.
-
-The shipped `.sp` compiles as a standalone plugin: the `#define _crimson_immun_control_usedfor_plugins`
-line near the top is enabled, which pulls in `myinfo`, the ConVar and the command. Comment out
-that one line and the file is a plain library again — `#include <l4d2_immun_control>` from your
-own plugin and drive it through the `ImmmunControl` methodmap (`SetAllImmun`, `SetPlayerImmun`,
-the per-player `ImmunSmoker` … `ImmunTank` properties, and `ReleaseControl` to break a control
-already in progress).
 
 ## ConVars
 

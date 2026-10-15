@@ -35,13 +35,6 @@ Timing:
 |---|---|
 | `scripting/l4d2_reserve_ammo.smx` | `addons/sourcemod/plugins/` |
 
-The `.sp` beside it is the file the `.smx` was built from, and it ships with the standalone switch
-on — `#define _crimson_reserve_ammo_usedfor_plugins` is active at the top of the file. That define
-is what makes the file a plugin: it publishes `Plugin myinfo`, hooks `round_start`, and registers
-`sm_ammo`. **Comment the `#define` out and the same file becomes a library instead** — the plugin
-entry points, the hook and the command all disappear, and you can `#include` it from your own plugin
-and drive the `ReserveAmmo` methodmap from your own forwards.
-
 ## Commands
 
 | Command | Flag | Effect |

@@ -29,49 +29,13 @@ victim side — see the ConVar table.
 | `scripting/l4d2_dmg_number.smx` | `addons/sourcemod/plugins/` |
 | `scripting/include/[API]l4d2_dmg_number.inc` | `addons/sourcemod/scripting/include/` — only needed by a plugin that calls the natives |
 
-The `.sp` is in `scripting/` if you want to build it yourself. It is identical to the module
-source except that the `_crimson_damage_number_usedfor_plugins` switch is enabled, so it compiles
-as a standalone plugin.
+The `.sp` is not published; use the `.smx` and, for the natives, the include above.
 
-## Two ways to use it
-
-They are alternatives — **do not mix them**.
-
-### ① Plugin + natives
+## Using the natives
 
 Load the `.smx` like any plugin; it registers the library `L4D2_TE_ShowDamageNumber`. Another
 plugin `#include <[API]l4d2_dmg_number>` and calls the natives — the implementation stays in this
 plugin, and the natives cross the plugin boundary.
-
-### ② Library — compile it into your own plugin
-
-Comment out `#define _crimson_damage_number_usedfor_plugins` in the source and
-`#include <userbase/l4d2_dmg_number>` it directly into your plugin. The whole implementation —
-methodmap included — is then compiled into your plugin, and there are no natives.
-
-Because the module's own plugin section is switched off, your plugin must forward the callbacks
-that section would have provided, with these exact signatures:
-
-```sourcepawn
-public void OnMapStart() {
-	DmgNum_t.MapStart();
-}
-
-public void OnClientPutInServer(int Client) {
-	DmgNum_t.PutInServer(Client);
-}
-
-public Action OnTakeDamages(int victim, int &attacker, int &inflictor, float &damage, int &damagetype, int &weapon, float damageForce[3], float damagePosition[3]) {
-	return DmgNum_t.OnTakeDamages(victim, attacker, damage, weapon);
-}
-```
-
-`DmgNum_t.MapStart()` precaches the beam sprite — without it nothing renders.
-`DmgNum_t.PutInServer()` installs the `SDKHook_OnTakeDamageAlive` hook pointing at
-`OnTakeDamages`, which is why the forward is required.
-
-Do not include the API header and the implementation together: both declare the methodmap
-`DmgNum_t`, which is `error 432`.
 
 ## ConVars
 

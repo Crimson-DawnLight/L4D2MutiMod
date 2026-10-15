@@ -30,12 +30,6 @@ game's own end-of-round scoreboard statistics. Clear bit 3 if you rely on that s
 |---|---|
 | `scripting/l4d2_block_msgs.smx` | `addons/sourcemod/plugins/` |
 
-The `.sp` in `scripting/` ships with the standalone-plugin switch on — `#define
-_crimson_block_msgs_usedfor_plugins` is enabled, so it builds into a plugin by itself as
-shipped. Comment that line out and the same file becomes a library instead: `#include` it
-from your own plugin and you get the `BlockMessage` API without registering the plugin, its
-ConVar or its command.
-
 ## ConVars
 
 | ConVar | Default | Meaning |

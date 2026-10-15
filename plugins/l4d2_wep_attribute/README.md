@@ -49,29 +49,6 @@ is created from the default table on first start.
 | `gamedata/l4d2_wep_attribute.txt` | `addons/sourcemod/gamedata/` |
 | `data/weapon_attributes_def.cfg` | `addons/sourcemod/data/` |
 
-## Library use
-
-The `.sp` in `scripting/` ships with the standalone-plugin switch on:
-
-```
-#define _crimson_wep_attribute_usedfor_plugins
-```
-
-Comment that line out and the file becomes a pure library exposing the `WeaponAttribute` methodmap
-(`GetWepPointer`, `GetWepInt` / `GetWepFloat`, `SetWepInt` / `SetWepFloat`, `GetMeleePointer`,
-`GetMeleeInt` / `GetMeleeBool` / `GetMeleeFloat`, `SetMeleeInt` / `SetMeleeBool` / `SetMeleeFloat`,
-`GetDefWepAttr`, `GetDefMeleeAttr`, `LoadFromConfig`, `SetWepAttr`, `SetMeleeAttr`, `Update`) for
-other plugins to `#include`.
-
-When included as a library, forward these to the module's own entry points:
-
-| Forward | Call |
-|---|---|
-| `OnPluginStart` | `WeaponAttribute.PluginStart()` |
-| `OnMapStart` | `WeaponAttribute.MapStart()` |
-| `OnMapEnd` | `WeaponAttribute.MapEnd()` |
-| `OnPluginEnd` | `WeaponAttribute.PluginEnd()` |
-
 ## Commands
 
 | Command | Flag | Effect |
