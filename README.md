@@ -18,14 +18,14 @@ them. Either way, what each thing does and where its files go is documented next
 
 | Item | Kind | Version | What it does | Download |
 |---|---|---|---|---|
-| [sendproxy](extensions/sendproxy/) | extension | 3.4.1 | Overrides one entity property for one client, at packet time | [latest](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases/latest) |
+| [sendproxy](extensions/sendproxy/) | extension | 3.4.1 | Overrides one entity property for one client, at packet time | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=sendproxy) |
+| [mutispecials](extensions/mutispecials/) | extension | 1.0.0.0 | Raises and controls the L4D2 special infected limit — no gamedata | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=mutispecials) |
 | [l4d2_survivors_healthbar](plugins/l4d2_survivors_healthbar/) | plugin | 2.0 | Native L4D2 survivor health bars, via per-client SendProxy overrides | [`.smx`](plugins/l4d2_survivors_healthbar/scripting/l4d2_survivors_healthbar.smx) |
 
 ## Install
 
-Each item's own `README.md` states which file goes to which path. Extension release archives mirror
-the server directory tree, so extracting one into your server root puts everything where it belongs.
-A plugin's `.smx` under `scripting/` goes to `addons/sourcemod/plugins/`.
+Each item's own `README.md` states exactly which file goes to which path — an extension binary
+under `addons/sourcemod/extensions/`, a plugin's `.smx` under `addons/sourcemod/plugins/`.
 
 ## License
 
