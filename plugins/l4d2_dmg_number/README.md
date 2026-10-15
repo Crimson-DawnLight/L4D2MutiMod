@@ -29,8 +29,6 @@ victim side — see the ConVar table.
 | `scripting/l4d2_dmg_number.smx` | `addons/sourcemod/plugins/` |
 | `scripting/include/[API]l4d2_dmg_number.inc` | `addons/sourcemod/scripting/include/` — only needed by a plugin that calls the natives |
 
-The `.sp` is not published; use the `.smx` and, for the natives, the include above.
-
 ## Using the natives
 
 Load the `.smx` like any plugin; it registers the library `L4D2_TE_ShowDamageNumber`. Another
