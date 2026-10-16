@@ -1,6 +1,6 @@
 # SendProxy 3.0
 
-> Change stuff without actually changing stuff.
+> Changes what one client sees, without changing the server's real data.
 
 Overrides an entity property for **one client**, at the moment the server packs
 that entity for transmission. The new value exists only in the packet that client
