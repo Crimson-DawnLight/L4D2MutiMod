@@ -33,6 +33,54 @@ way, what each thing does and where its files go is documented next to it.
 
 Each item's own `README.md` states exactly which file goes to which path — an extension binary
 under `addons/sourcemod/extensions/`, a plugin's `.smx` under `addons/sourcemod/plugins/`.
+Extensions are built and tested against SourceMod **1.12.0.7193**; if one refuses to start, see
+[When an extension fails to load](#when-an-extension-fails-to-load).
+
+## When an extension fails to load
+
+Everything here is built and tested against **SourceMod 1.12.0.7193**. The console line, or the
+entry in `addons/sourcemod/logs/`, names the cause — match it against the sections below before
+reporting anything.
+
+### glibc / libstdc++ errors
+
+**These cannot come from our builds.** The Linux binaries import only `libc.so.6` — plus
+`libdl.so.2` and `libm.so.6` for Mutispecials — with the C++ runtime linked in statically, so no
+`libstdc++.so.6` symbol is referenced at all. A `GLIBCXX_3.4.xx` or `CXXABI_*` failure is
+therefore never ours.
+
+What the build does need *from* glibc is fixed and low, and stated per item (SendProxy: **2.7**;
+Mutispecials: **2.29**). So `version 'GLIBC_2.xx' not found` — the usual way an extension built
+on a newer distro fails — is not something these builds produce. It is something else on the box:
+another extension, or a library that one pulls in.
+
+### `Extension version too new` / `too old`
+
+SourceMod's extension API version is not compatible across major releases: **1.12 is version 8,
+1.13 is version 9**. A build for one does not load on the other, in either direction. The fix is
+to run a **SourceMod 1.12** server. These extensions target 1.12 and **1.13 and later will not be
+maintained** — no 1.13 builds, none planned.
+
+### Interface version mismatches
+
+SourceMod changes its extension-facing interfaces often, and each one carries a version that has
+to match exactly — so a build can load on the SourceMod it was built against and fail on another.
+There is no clever workaround:
+
+- **Run the SourceMod build the item was built against.** This is the intended answer, and what
+  each item's own `README.md` states.
+- **Ask for a build matched to your SourceMod.** Possible, but discouraged: it costs the author
+  time for a build that goes stale with your next SourceMod update.
+- **Drop the SourceMod interface dependency** and ship a MetaMod plugin instead. That does work,
+  but a MetaMod plugin cannot expose natives or forwards to SourcePawn, so it is not a drop-in
+  replacement for anything that has to be reachable from a plugin.
+
+### Everything else
+
+- Check the failure against the sections above first — anything explained there is not a bug.
+- On Linux, **restart the server** after installing. That is the only supported way to load an
+  extension: problems that appear only after a hot reload (`sm exts reload`, MetaMod
+  `meta reload`) are treated as expected behaviour and will not be looked at.
 
 ## License
 

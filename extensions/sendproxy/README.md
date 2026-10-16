@@ -21,6 +21,9 @@ shipped, and none will be. Gamedata shipped for Left 4 Dead 2. The extension
 refuses to load — with a logged error — when any lookup in `gamedata/sendproxy.txt`
 fails, instead of loading and then silently doing nothing.
 
+On Linux the binary needs only **glibc 2.7** and no `libstdc++` at runtime. The release
+repository's README covers load failures.
+
 ## Use
 
 Queue overrides from `OnSendProxyPre()`, which runs once per frame, before the

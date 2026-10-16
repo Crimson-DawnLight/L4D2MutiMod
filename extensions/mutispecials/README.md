@@ -25,12 +25,16 @@ along: engine slot handling for servers above 4 players, and a map-change menu b
 
 Restart the server, or load the extension by hand.
 
+On Linux the binary needs **glibc 2.29** (an Ubuntu 20.04 toolchain) and no `libstdc++` at
+runtime. The repository README covers load failures.
+
 **No gamedata.** Nothing goes under `addons/sourcemod/gamedata/`, and nothing there has to be
 rewritten when the game updates: what this extension needs from the game is resolved inside the
 extension. If a game update moves the internals it relies on, that takes a new build — not an
 edited gamedata file.
 
-Depends on SourceMod **1.12+** and Metamod:Source **1.12+**, on a L4D2 server (Windows / Linux).
+Depends on SourceMod **1.12** (tested on 1.12.0.7193 — **1.13 and later are not supported**) and
+Metamod:Source **1.12+**, on a L4D2 server (Windows / Linux).
 
 ## ConVars
 
