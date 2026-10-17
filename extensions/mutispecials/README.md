@@ -23,7 +23,8 @@ along: engine slot handling for servers above 4 players, and a map-change menu b
 |---|---|
 | `mutispecials.ext.so` (Linux) / `mutispecials.ext.dll` (Windows) | `addons/sourcemod/extensions/` |
 
-Restart the server, or load the extension by hand.
+Restart the server, or load the extension by hand. The extension registers the `mutispecials`
+library; plugins can gate on it with `LibraryExists("mutispecials")`.
 
 On Linux the binary needs **glibc 2.29** (an Ubuntu 20.04 toolchain) and no `libstdc++` at
 runtime. The repository README covers load failures.

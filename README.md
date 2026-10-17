@@ -19,7 +19,8 @@ way, what each thing does and where its files go is documented next to it.
 | Item | Kind | Version | What it does | Download |
 |---|---|---|---|---|
 | [sendproxy](extensions/sendproxy/) | extension | 3.4.1 | Changes what one client sees, without changing the server's real data | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=sendproxy) |
-| [mutispecials](extensions/mutispecials/) | extension | 1.0.0.0 | More special infected alive at once, driven by the game's own Director — no gamedata | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=mutispecials) |
+| [left4dhooks](extensions/left4dhooks/) | extension | 1.0.0 | The Left 4 DHooks Direct native and forward surface, with a methodmap API — no gamedata | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=left4dhooks) |
+| [mutispecials](extensions/mutispecials/) | extension | 1.0.0 | More special infected alive at once, driven by the game's own Director — no gamedata | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=mutispecials) |
 | [l4d2_survivors_healthbar](plugins/l4d2_survivors_healthbar/) | plugin | 2.0 | Native L4D2 survivor health bars, via per-client SendProxy overrides | [`.smx`](plugins/l4d2_survivors_healthbar/l4d2_survivors_healthbar.smx) |
 | [l4d2_reload](plugins/l4d2_reload/) | plugin | 1.0.0 | `CTerrorGun` finish/abort reload calls, plus an `sm_reload` command | [`.smx`](plugins/l4d2_reload/l4d2_reload.smx) |
 | [l4d2_block_msgs](plugins/l4d2_block_msgs/) | plugin | 1.0.0 | Silences the game's own notices, one bitmask bit per message class | [`.smx`](plugins/l4d2_block_msgs/l4d2_block_msgs.smx) |
@@ -45,12 +46,11 @@ reporting anything.
 ### glibc / libstdc++ errors
 
 **These cannot come from our builds.** The Linux binaries import only `libc.so.6` — plus
-`libdl.so.2` and `libm.so.6` for Mutispecials — with the C++ runtime linked in statically, so no
-`libstdc++.so.6` symbol is referenced at all. A `GLIBCXX_3.4.xx` or `CXXABI_*` failure is
-therefore never ours.
+`libdl.so.2` and `libm.so.6` — with the C++ runtime linked in statically, so no `libstdc++.so.6`
+symbol is referenced at all. A `GLIBCXX_3.4.xx` or `CXXABI_*` failure is therefore never ours.
 
 What the build does need *from* glibc is fixed and low, and stated per item (SendProxy: **2.7**;
-Mutispecials: **2.29**). So `version 'GLIBC_2.xx' not found` — the usual way an extension built
+Left4DHooks and Mutispecials: **2.29**). So `version 'GLIBC_2.xx' not found` — the usual way an extension built
 on a newer distro fails — is not something these builds produce. It is something else on the box:
 another extension, or a library that one pulls in.
 

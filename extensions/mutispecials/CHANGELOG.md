@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0.0 — Initial release
+## 1.0.0 — Initial release
 
 First release of the Mutispecials line, carved out of the CrmExt extension.
 
@@ -13,3 +13,4 @@ First release of the Mutispecials line, carved out of the CrmExt extension.
 - **Engine slot handling**: client slots follow `sv_maxplayers`, for servers above 4 players.
 - **Map-change menu** behind `crm_map` (mission/chapter picker, optional vote).
 - **No gamedata**: what it needs from the game resolves in-code; a failed lookup refuses the load.
+- Registers the `mutispecials` extension library.
