@@ -19,8 +19,11 @@ and the weapon-attribute enums), so a plugin written against L4DD compiles again
 
 ## Differences from Left4DHooks
 
-- **`left4dhooks.smx` cannot run next to this extension.** Both register the same native names,
-  and the plugin will fail to load. Remove the plugin before using this extension.
+- **`left4dhooks.smx` cannot run next to this extension.** Both register the same native and
+  forward names. There is a second problem: this extension patches engine code with SafetyHook,
+  and plugins always run after extensions — the plugin's own signature scans can resolve wrong
+  addresses against the patched code unless it is written to tolerate it. Remove the plugin
+  before using this extension.
 - **The legacy native API is compatible.** All 232 implemented legacy names are registered
   under their original `L4D_*` / `L4D2_*` names; the include marks them deprecated and points at
   the methodmap replacement.
@@ -40,13 +43,17 @@ and the weapon-attribute enums), so a plugin written against L4DD compiles again
 
 ## Autoload
 
-`left4dhooksExt.inc` declares the extension as `file = "left4dhooks.ext"`. Plugins compiled against
-the old `left4dhooks.inc` do not declare this extension. If you do not want to rely on autoload,
-`#include <left4dhooksExt>` in every plugin that depends on Left4DHooks and recompile it; the
-compiled plugin then names `left4dhooks.ext` and SourceMod loads the extension when the plugin
-loads.
+**Recompile every plugin that depends on Left4DHooks with `#include <left4dhooksExt>`.** The
+include declares the extension as `file = "left4dhooks.ext"`, so the compiled plugin requests it
+and SourceMod loads the extension in a deterministic order when the plugin loads.
 
-Do not include `left4dhooks.inc` and `left4dhooksExt.inc` together — they define the same symbols.
+This is more flexible than relying on a global autoload entry: if the dependent plugin is removed
+and the server restarts, `left4dhooks.ext` is not loaded either — no leftover hooks, no extension
+sitting in the process for nothing.
+
+A plugin compiled against the old `left4dhooks.inc` does not declare this extension, so it will
+not load it. Do not include `left4dhooks.inc` and `left4dhooksExt.inc` together — they define the
+same symbols.
 
 ## Install
 
