@@ -17,6 +17,37 @@ registered too, so existing plugins keep compiling, and are marked deprecated in
 The include also declares the L4DD support enums (`PointerType`, `CountdownTimer`, `IntervalTimer`
 and the weapon-attribute enums), so a plugin written against L4DD compiles against this include.
 
+## Differences from Left4DHooks
+
+- **`left4dhooks.smx` cannot run next to this extension.** Both register the same native names,
+  and the plugin will fail to load. Remove the plugin before using this extension.
+- **The legacy native API is compatible.** All 232 implemented legacy names are registered
+  under their original `L4D_*` / `L4D2_*` names; the include marks them deprecated and points at
+  the methodmap replacement.
+- **Some L4DD natives are not implemented**: the animation-hook family (`AnimHookEnable`,
+  `AnimHookDisable`, `AnimGetActivity`, `AnimGetFromActivity`), the timer-object API
+  (`L4D2_CTimer*`, `L4D2_ITimer*`), the VScript/bot family (`L4D2_GetScriptScope`,
+  `L4D2_GetDirectorScriptScope`, `L4D2_GetScriptValue*`, `L4D2_ExecVScriptCode`,
+  `L4D2_GetVScriptEntity`, `L4D2_GetVScriptOutput`, `L4D2_VScriptWrapper_*`,
+  `L4D2_CommandABot`), and `L4D_GetAllNavAreas`, `L4D_StartBurning`.
+- **`_PostHandled` forwards are not provided.** Use the `_Post` variant instead. The handled
+  state is not reproduced.
+- **A few forwards are absent**: the L4D1-only ones (`L4D1_FirstAidKit_StartHealing*`,
+  `L4D1_OnSavingEntities*`) and `L4D2_OnWaterMove`, `L4D_OnGameModeChange`,
+  `L4D_OnGetRandomPZSpawnPosition`, `L4D_OnInfectedShoved`, `L4D_OnRecalculateVersusScore` /
+  `_Post`.
+- **This is a test build.** Problems are expected; report them promptly so they can be fixed.
+
+## Autoload
+
+`left4dhooksExt.inc` declares the extension as `file = "left4dhooks.ext"`. Plugins compiled against
+the old `left4dhooks.inc` do not declare this extension. If you do not want to rely on autoload,
+`#include <left4dhooksExt>` in every plugin that depends on Left4DHooks and recompile it; the
+compiled plugin then names `left4dhooks.ext` and SourceMod loads the extension when the plugin
+loads.
+
+Do not include `left4dhooks.inc` and `left4dhooksExt.inc` together — they define the same symbols.
+
 ## Install
 
 | File | Where |
@@ -43,4 +74,3 @@ Metamod:Source **1.12+**, on a L4D2 server (Windows / Linux).
 
 - Existing L4DD plugins compile unchanged, but the compiler warns on every deprecated legacy name.
   Migrate to the methodmaps when convenient.
-- `left4dhooksExt.inc` replaces the L4DD `left4dhooks.inc` — include one or the other, not both.
