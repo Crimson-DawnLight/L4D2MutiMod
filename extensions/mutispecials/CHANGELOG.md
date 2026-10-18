@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 — Load fix
+
+- **Fixed a load failure on some servers**: the extension no longer resolves game signatures that
+  only the Left4DHooks product uses, so one of those going missing can no longer refuse the
+  Mutispecials load.
+
 ## 1.0.0 — Initial release
 
 First release of the Mutispecials line, carved out of the CrmExt extension.
