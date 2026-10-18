@@ -50,8 +50,18 @@ and the server restarts, `left4dhooks.ext` is not loaded either — no leftover 
 sitting in the process for nothing.
 
 A plugin compiled against the old `left4dhooks.inc` does not declare this extension, so it will
-not load it. Do not include `left4dhooks.inc` and `left4dhooksExt.inc` together — they define the
-same symbols.
+not load it on its own.
+
+## Plugins built for left4dhooks.smx
+
+Plugins that depend on the old `left4dhooks.smx` do **not** need to be recompiled. Put the shipped
+`left4dhooks.smx` in `addons/sourcemod/plugins/` and keep its file name. It is an empty plugin that
+includes `<left4dhooksExt>`; loading it makes SourceMod load `left4dhooks.ext`, and the legacy
+`L4D_*` / `L4D2_*` natives are then provided by the extension. Remove any real Left4DHooks plugin
+before using the stub.
+
+Do not include `left4dhooks.inc` and `left4dhooksExt.inc` together in the same plugin — they define
+the same symbols.
 
 ## Install
 
@@ -59,6 +69,7 @@ same symbols.
 |---|---|
 | `left4dhooks.ext.so` (Linux) / `left4dhooks.ext.dll` (Windows) | `addons/sourcemod/extensions/` |
 | `left4dhooksExt.inc` | `addons/sourcemod/scripting/include/` |
+| `left4dhooks.smx` (compatibility stub) | `addons/sourcemod/plugins/` — only when running plugins built against `left4dhooks.inc` |
 
 Restart the server, or load the extension by hand.
 
