@@ -39,8 +39,6 @@ and the weapon-attribute enums), so a plugin written against L4DD compiles again
   `L4D1_OnSavingEntities*`) and `L4D2_OnWaterMove`, `L4D_OnGameModeChange`,
   `L4D_OnGetRandomPZSpawnPosition`, `L4D_OnInfectedShoved`, `L4D_OnRecalculateVersusScore` /
   `_Post`.
-- **This is a test build.** Problems are expected; report them promptly so they can be fixed.
-
 ## Autoload
 
 **Recompile every plugin that depends on Left4DHooks with `#include <left4dhooksExt>`.** The

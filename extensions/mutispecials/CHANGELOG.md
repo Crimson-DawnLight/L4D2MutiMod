@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.2 — Coexistence fix
+
+- **No duplicate `sv_maxplayers` / `sv_setmax` registration.** When those ConVars already exist
+  (for example on servers running l4dtoolz), the extension now reuses them instead of registering
+  a second ConVar with its own change callback. The engine warning
+  `Convar ... has multiple different change callbacks` is gone, and the existing owner stays in
+  charge of the slots.
+- Includes the Left4DHooks 1.0.1 event-hook fix: no use-after-free when a plugin blocks a game
+  event in a Pre hook.
+
 ## 1.0.1 — Load fix
 
 - **Fixed load failures on some game builds**: the extension now resolves only the signatures it

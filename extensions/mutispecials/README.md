@@ -58,6 +58,8 @@ The effective limit is `crm_mutisi_max` plus `crm_mutisi_inc_per_player × alive
 ## Notes
 
 - **Turn off other multi-special and boss-slot plugins.** They fight over the same spawn logic.
+- **l4dtoolz can stay installed.** If `sv_maxplayers` / `sv_setmax` already exist, Mutispecials
+  reuses them instead of registering its own, so the two do not warn or fight over callbacks.
 - **Start low.** Test with a small cap, then raise it gradually.
 - **The cap is bounded by bot slots.** Run out and the server stops filling them — lower the cap
   or raise `sv_maxclients`.
