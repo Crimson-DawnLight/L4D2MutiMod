@@ -2,9 +2,9 @@
 
 ## 1.0.1 — Load fix
 
-- **Fixed a load failure on some servers**: the extension no longer resolves game signatures that
-  only the Left4DHooks product uses, so one of those going missing can no longer refuse the
-  Mutispecials load.
+- **Fixed load failures on some game builds**: the extension now resolves only the signatures it
+  uses. Left4DHooks-only signatures and the unused `CMapTransition` signatures no longer refuse
+  the Mutispecials load.
 
 ## 1.0.0 — Initial release
 
