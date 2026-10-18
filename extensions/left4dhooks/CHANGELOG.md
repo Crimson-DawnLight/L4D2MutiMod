@@ -7,6 +7,9 @@
   later FireEvent pre hook with that freed pointer. The hook now skips events already superceded
   by an earlier hook.
 - The extension no longer frees game events it does not own.
+- **The package ships a `left4dhooks.smx` compatibility stub** so plugins built against the old
+  `left4dhooks.inc` load without recompiling. It registers the `left4dhooks` plugin library and
+  autoloads `left4dhooks.ext`.
 
 ## 1.0.0 — Initial release
 
@@ -19,5 +22,5 @@ First public build of the Left4DHooks extension.
 - **167 forwards** over game events and engine functions, including the `_Post` variants.
 - **Support enums** from the L4DD include (`PointerType`, the timer enums, the weapon-attribute
   enums), so existing plugins compile without extra includes.
-- Registers the `left4dhooks` extension library.
+- Registers the `left4dhooksExt` extension library.
 - **No gamedata**: signatures and offsets are built into the extension.

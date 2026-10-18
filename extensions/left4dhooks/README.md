@@ -56,9 +56,10 @@ not load it on its own.
 
 Plugins that depend on the old `left4dhooks.smx` do **not** need to be recompiled. Put the shipped
 `left4dhooks.smx` in `addons/sourcemod/plugins/` and keep its file name. It is an empty plugin that
-includes `<left4dhooksExt>`; loading it makes SourceMod load `left4dhooks.ext`, and the legacy
-`L4D_*` / `L4D2_*` natives are then provided by the extension. Remove any real Left4DHooks plugin
-before using the stub.
+includes `<left4dhooksExt>` and registers the `left4dhooks` plugin library; the required-plugin
+check then passes, loading it makes SourceMod load `left4dhooks.ext`, and the legacy `L4D_*` /
+`L4D2_*` natives are provided by the extension. Remove any real Left4DHooks plugin before using
+the stub.
 
 Do not include `left4dhooks.inc` and `left4dhooksExt.inc` together in the same plugin — they define
 the same symbols.
@@ -73,8 +74,8 @@ the same symbols.
 
 Restart the server, or load the extension by hand.
 
-The extension registers the `left4dhooks` library; plugins can gate on it with
-`LibraryExists("left4dhooks")`.
+The compatibility stub registers the `left4dhooks` library, so plugins can gate on it with
+`LibraryExists("left4dhooks")`. The extension registers `left4dhooksExt`.
 
 On Linux the binary needs **glibc 2.29** (an Ubuntu 20.04 toolchain) and no `libstdc++` at
 runtime. The repository README covers load failures.
