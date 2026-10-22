@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3 — Internal optimizations
+
+- Some internal optimizations across the extension.
+- The runtime signature-parsing layer on the KeyValues path is gone.
+- Faster startup; no configuration, native or console-command changes.
+
 ## 1.0.2 — Coexistence fix
 
 - **No duplicate `sv_maxplayers` / `sv_setmax` registration.** When those ConVars already exist
