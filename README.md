@@ -62,10 +62,15 @@ SourceMod's extension API version is not compatible across major releases: **1.1
 to run a **SourceMod 1.12** server. These extensions target 1.12 and **1.13 and later will not be
 maintained** — no 1.13 builds, none planned.
 
-### Interface version mismatches
+### `Could not find interface: ...`
 
-SourceMod changes its extension-facing interfaces often, and each one carries a version that has
-to match exactly — so a build can load on the SourceMod it was built against and fail on another.
+SourceMod reports a missing — or version-mismatched — extension interface as
+**`Could not find interface: <name>`**, for example `Could not find interface: IGameHelpers`. It
+never says "version mismatch": each interface carries a version number that has to match exactly,
+so a build can load on the SourceMod it was built against and fail on another, and the message
+looks the same either way. (Builds from 2026-10-23 onward no longer use the `IGameHelpers`,
+`IUserMessages` or `ITranslator` interfaces, so those three names cannot appear.)
+
 There is no clever workaround:
 
 - **Run the SourceMod build the item was built against.** This is the intended answer, and what
