@@ -51,3 +51,7 @@ fails the call instead of silently applying the wrong one. Both setters return
 
 **Restart, do not reload.** Plugins that call these natives cannot be
 hot-reloaded. Change the values, then restart the server to apply them.
+
+## Credits
+
+Original sourcepawn by ExpCharacter — [oh-my-l4d2-plugins](https://github.com/ExpCharacter/oh-my-l4d2-plugins/).
