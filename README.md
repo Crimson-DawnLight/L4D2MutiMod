@@ -81,6 +81,23 @@ There is no clever workaround:
   but a MetaMod plugin cannot expose natives or forwards to SourcePawn, so it is not a drop-in
   replacement for anything that has to be reachable from a plugin.
 
+### Signature load failures
+
+If `sm exts list` shows **failed to load**, open the newest
+`addons/sourcemod/logs/errors_*.log` and look for signature lines — for example
+`ISigTools GetMemSig failed: ...` or `... engine signatures not found`. Those mean a required
+engine signature did not resolve. (`_2155` packages only load on the 2155 engine build; on
+another build they report exactly this.)
+
+When reporting one, include:
+
+1. **Platform** — Windows or Linux.
+2. **SourceMod version** — the exact build, as shown by `sm version`.
+3. **What you already ruled out.** Every release here is loaded and tested locally before it
+   ships, so the usual cause is a conflict on your server. Bisect it yourself first: disable
+   half your plugins, then half of `sm exts list`, then half of `meta list`, and narrow down
+   which one makes the difference. Say what you disabled and what changed.
+
 ### Everything else
 
 - Check the failure against the sections above first — anything explained there is not a bug.
