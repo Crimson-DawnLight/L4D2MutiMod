@@ -8,3 +8,4 @@
 - Send tables that grow past the wire limit are split at integer boundaries and
   re-framed on the same message.
 - No gamedata.
+- 2155 build: fixed a Linux startup crash while resolving `g_pMatchExtL4D`.
