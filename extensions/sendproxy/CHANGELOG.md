@@ -9,6 +9,11 @@
 The version number below is the one baked into the binaries; support status is
 separate from it and does not bump the version.
 
+## 3.4.2 — Overrides on ordinary entities apply again
+
+- Fixed overrides on anything other than the game rules entity silently not taking effect in 3.4.1.
+  Anything you queue for a player, a prop, or another ordinary entity now reaches that client again.
+
 ## 3.4.1 — Internal cleanup
 
 - Reworked the per-client override path internally and reduced how many entities get marked as changed
