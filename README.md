@@ -18,9 +18,9 @@ way, what each thing does and where its files go is documented next to it.
 
 | Item | Kind | Version | What it does | Download |
 |---|---|---|---|---|
-| [sendproxy](extensions/sendproxy/) | extension | 3.4.1 | Changes what one client sees, without changing the server's real data | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=sendproxy) |
+| [sendproxy](extensions/sendproxy/) | extension | 3.4.2 | Changes what one client sees, without changing the server's real data | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=sendproxy) |
 | [left4dhooks](extensions/left4dhooks/) | extension | 1.0.1 | The Left 4 DHooks Direct native and forward surface, with a methodmap API — no gamedata | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=left4dhooks) |
-| [mutispecials](extensions/mutispecials/) | extension | 1.0.3 | More special infected alive at once, driven by the game's own Director — no gamedata | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=mutispecials) |
+| [mutispecials](extensions/mutispecials/) | extension | 1.0.4 | More special infected alive at once, driven by the game's own Director — no gamedata | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=mutispecials) |
 | [sendtable](extensions/sendtable/) | extension | 1.0.0 | Widens integer SendProp bit widths and re-frames oversized send tables — no gamedata | [releases](https://github.com/Crimson-DawnLight/L4D2MutiMod/releases?q=sendtable) |
 | [l4d2_survivors_healthbar](plugins/l4d2_survivors_healthbar/) | plugin | 2.0 | Native L4D2 survivor health bars, via per-client SendProxy overrides | [`.smx`](plugins/l4d2_survivors_healthbar/l4d2_survivors_healthbar.smx) |
 | [l4d2_reload](plugins/l4d2_reload/) | plugin | 1.0.0 | `CTerrorGun` finish/abort reload calls, plus an `sm_reload` command | [`.smx`](plugins/l4d2_reload/l4d2_reload.smx) |

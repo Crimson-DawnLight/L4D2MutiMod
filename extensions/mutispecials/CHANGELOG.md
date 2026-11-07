@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.4 — Map-change fix
+
+- Send the `ShowStats` user message to every client before a map change, as the original
+  SourcePawn implementation did.
+- Internal refactors; no configuration, native or console-command changes.
+
 ## 1.0.3 — Internal optimizations
 
 - Some internal optimizations across the extension.
