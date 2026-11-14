@@ -27,6 +27,7 @@ way, what each thing does and where its files go is documented next to it.
 | [l4d2_block_msgs](plugins/l4d2_block_msgs/) | plugin | 1.0.0 | Silences the game's own notices, one bitmask bit per message class | [`.smx`](plugins/l4d2_block_msgs/l4d2_block_msgs.smx) |
 | [l4d2_dmg_number](plugins/l4d2_dmg_number/) | plugin | 1.0.0 | Floating damage numbers, drawn with beam temp entities to the attacker only | [`.smx`](plugins/l4d2_dmg_number/l4d2_dmg_number.smx) |
 | [l4d2_immun_control](plugins/l4d2_immun_control/) | plugin | 1.0.0 | Lets survivors ignore chosen special-infected controls | [`.smx`](plugins/l4d2_immun_control/l4d2_immun_control.smx) |
+| [l4d2_kill_si](plugins/l4d2_kill_si/) | plugin | 1.0.0 | Heals survivors for killing special infected | [`.smx`](plugins/l4d2_kill_si/l4d2_kill_si.smx) |
 | [l4d2_reserve_ammo](plugins/l4d2_reserve_ammo/) | plugin | 1.0.0 | Per-weapon-type reserve ammo caps, from a config file | [`.smx`](plugins/l4d2_reserve_ammo/l4d2_reserve_ammo.smx) |
 | [l4d2_spawn_SI](plugins/l4d2_spawn_SI/) | plugin | 1.0.0 | Per-class special infected limits, weights and spawn timing | [`.smx`](plugins/l4d2_spawn_SI/l4d2_spawn_SI.smx) |
 | [l4d2_wep_attribute](plugins/l4d2_wep_attribute/) | plugin | 1.0.0 | Retunes any weapon or melee script's attributes at runtime, from KeyValues tables | [`.smx`](plugins/l4d2_wep_attribute/l4d2_wep_attribute.smx) |
