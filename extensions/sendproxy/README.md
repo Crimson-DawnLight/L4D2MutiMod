@@ -2,10 +2,10 @@
 
 > Changes what one client sees, without changing the server's real data.
 
-Overrides an entity property for **one client**, at the moment the server packs
-that entity for transmission. The new value exists only in the packet that client
-receives — the entity on the server keeps its real value, for everyone else and
-for gameplay code.
+Overrides an entity property — or hides the whole entity — for **one client**, at
+the moment the server packs entities for transmission. The new value exists only
+in the packet that client receives; the entity on the server keeps its real
+value, for everyone else and for gameplay code.
 
 ## Install
 
@@ -54,8 +54,15 @@ outside `1 .. MaxClients`, or when `entRef` does not resolve to a live entity.
 `AddChangeString` also returns `false` when the string does not fit in `maxLen`
 bytes *including* the terminator — it is never silently truncated.
 
+**Hiding entities.** `SendProxy.AddHide(client, entRef)` leaves the entity — and
+everything parented to it, like weapons and cosmetics — out of that client's
+snapshot for the frame. It is independent of property overrides: an
+override-hidden entity is simply never sent, and a client with no overrides at
+all pays only the transmit pass. A client's own player entity and its parent
+chain are never hidden; SourceTV and Replay are unaffected.
+
 **Lifetime.** The queue is drained once per tick, so queue again from
-`OnSendProxyPre()` every frame you want the override applied.
+`OnSendProxyPre()` every frame you want the override or hide applied.
 
 **Game rules.** Overriding the game rules entity works too; the write is
 redirected to the game rules object behind the `CTerrorGameRulesProxy`.

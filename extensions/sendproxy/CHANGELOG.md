@@ -9,6 +9,15 @@
 The version number below is the one baked into the binaries; support status is
 separate from it and does not bump the version.
 
+## 3.5.0 — Hide an entity from one client
+
+- New native `SendProxy.AddHide(client, entRef)`: that client does not receive the
+  entity, or anything parented to it, for the frame. Queue it from
+  `OnSendProxyPre()` like the `AddChange*` natives.
+- Hiding is independent of property overrides and does no packing work on its own.
+- A client's own player entity and its parent chain are never hidden; SourceTV and
+  Replay are unaffected.
+
 ## 3.4.2 — Overrides on ordinary entities apply again
 
 - Fixed overrides on anything other than the game rules entity silently not taking effect in 3.4.1.
