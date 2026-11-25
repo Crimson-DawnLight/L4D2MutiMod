@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 — 2026-11-25
+
+- Fixed a startup crash on the November 2026 engine build.
+
 ## 1.0.0 — Initial release
 
 - `SendTable.SetBits`, `SendTable.SetElementBits` and `SendTable.GetBits`.
